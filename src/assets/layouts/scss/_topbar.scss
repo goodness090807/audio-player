@@ -1,0 +1,13 @@
+.layout-topbar{
+    background-color: rgb(30, 30, 30);
+    box-shadow: 1px 10px 16px -3px #423E41;
+    z-index: 2;
+
+    a{
+        text-decoration: none;
+    }
+
+    .nav-btn{
+        display: none;
+    }
+}

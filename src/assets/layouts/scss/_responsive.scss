@@ -1,0 +1,25 @@
+
+@media (max-width: 800px) {
+    .layout-sidebar {
+        transform: translate(-100%);
+        width: 180px;
+    }
+
+    .layout-topbar{
+        .nav-btn{
+            display: inline-flex;
+        }
+    }
+
+    .layout-main{
+        margin-left: 0;
+    }
+
+    .layout-content{
+        width: 100%;
+    }
+
+    .p-menu{
+        width: 10.5rem;
+    }
+}
