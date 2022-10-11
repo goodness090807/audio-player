@@ -1,7 +1,9 @@
 .layout-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 5rem;
     overflow: auto;
-    flex: 1 1 0;
+    height: 100%;
+
+    img{
+        max-width: 100%;
+    }
 }

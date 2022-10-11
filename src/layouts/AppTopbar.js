@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Button } from "primereact/button";
 import { Menu } from "primereact/menu";
+import RouteLink from "../components/Routers/RouterLink";
 
 const AppTopbar = ({ mobileSidebarActive, setMobileSidebarActive }) => {
 	const menu = useRef(null);
@@ -15,7 +16,7 @@ const AppTopbar = ({ mobileSidebarActive, setMobileSidebarActive }) => {
 				onClick={() => setMobileSidebarActive(!mobileSidebarActive)}
 			/>
 
-			<a className="flex align-items-center" href="/home">
+			<RouteLink className="flex align-items-center" href="/">
 				<img
 					src="images/logo.svg"
 					height="50px"
@@ -24,7 +25,7 @@ const AppTopbar = ({ mobileSidebarActive, setMobileSidebarActive }) => {
 					className="mr-1"
 				/>
 				<span>Audio Player</span>
-			</a>
+			</RouteLink>
 
 			<Button
 				icon="pi pi-user"
