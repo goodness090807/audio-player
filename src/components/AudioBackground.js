@@ -3,7 +3,7 @@ import React from "react";
 const AudioBackground = () => {
 	return (
 		<div className="audio-background">
-			<img title="imageName" alt="imageName" src="/images/鬼滅之刃.jpg" />
+			<img title="imageName" alt="imageName" src="TODO:要抓網路的位置" />
 		</div>
 	);
 };

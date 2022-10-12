@@ -1,0 +1,23 @@
+
+@media (max-width: 800px) {
+    .audio-player{
+        .audio-central{
+            width: 100%;
+            order: 1;
+            margin: 0;
+        }
+
+        .audio-volumn{
+            display: none !important;
+            margin: 0;
+        }
+
+        .p-slider.p-slider-horizontal{
+            width: 75vw;
+    
+            &:hover{
+                .p-slider-handle{opacity: 1;}
+            }
+        }
+    }
+}

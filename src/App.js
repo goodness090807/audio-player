@@ -6,9 +6,8 @@ import "primeflex/primeflex.css";
 import "./assets/layouts/layout.scss";
 import AppTopbar from "./layouts/AppTopbar";
 import AppSidebar from "./layouts/AppSidebar";
+import AppContent from "./layouts/AppContent";
 import AudioPlayer from "./components/AudioPlayers/AudioPlayer";
-import AudioBackground from "./components/AudioBackground";
-import Router from "./components/Routers/Router";
 
 const audios = [
 	"TODO：填入網址(之後要用API取得)",
@@ -34,15 +33,13 @@ const App = () => {
 			/>
 
 			<div className="layout-sidebar">
-				<AppSidebar />
+				<AppSidebar setMobileSidebarActive={setMobileSidebarActive} />
 			</div>
 			<div className="layout-main">
 				<div className="layout-content">
-					<Router path="/">
-						<AudioBackground />
-					</Router>
+					<AppContent />
 				</div>
-				<div className="flex align-items-center justify-content-center h-8rem layout-footer audio-player">
+				<div className="flex flex-wrap align-items-center justify-content-center h-8rem layout-footer audio-player">
 					<AudioPlayer selectedVideo={selectedVideo} />
 				</div>
 			</div>

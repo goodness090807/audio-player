@@ -1,9 +1,12 @@
 import React from "react";
 import RouteLink from "../components/Routers/RouterLink";
 
-const AppSidebar = () => {
+const AppSidebar = ({ setMobileSidebarActive }) => {
 	return (
-		<ul className="layout-menu">
+		<ul
+			className="layout-menu"
+			onClick={() => setMobileSidebarActive(false)}
+		>
 			<li>
 				<RouteLink href="/">
 					<i className="pi pi-home mr-2"></i>

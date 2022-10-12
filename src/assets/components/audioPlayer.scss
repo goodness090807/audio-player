@@ -1,19 +1,40 @@
 .audio-player{
-    i{
-        margin-left: 20px;
+    .audio-central{
+        margin-left: 1rem;
+    }
+
+    .audio-volumn{
+        margin-left: 1rem;
     }
 
     .p-slider{
-        margin-left: 20px;
-        background: white;
+        background: gray;
+        cursor: pointer;
+        height: 0.5rem;
     }
 
     .p-slider.p-slider-horizontal{
         width: 200px;
+
+        &:hover{
+            .p-slider-handle{opacity: 1;}
+        }
+    }
+    
+    .p-slider.p-slider-horizontal.volume{
+        width: 150px;
+        
+        .p-slider-range{
+            background-color: white;
+        }
     }
 
-    .p-slider.p-slider-vertical{
-        height: 5rem;
+    .p-slider-handle{
+        opacity: 0;
+
+        &:hover{
+            background: #0b213f;
+        }
     }
 }
 
