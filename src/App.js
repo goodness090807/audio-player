@@ -29,7 +29,9 @@ const App = () => {
 
 	useEffect(() => {
 		// 新增一個audio的HTML Object
-		audio.current = new Audio(audios[0]);
+		audio.current = new Audio();
+		audio.current.crossOrigin = "anonymous";
+		audio.current.src = audios[0];
 		const audioContext = new AudioContext();
 
 		// 設定audio事件
