@@ -14,9 +14,9 @@ const AppSidebar = ({ setMobileSidebarActive }) => {
 				</RouteLink>
 			</li>
 			<li>
-				<RouteLink href="/edit">
-					<i className="pi pi-file-edit mr-2"></i>
-					<span>編輯清單</span>
+				<RouteLink href="/list">
+					<i className="pi pi-list mr-2"></i>
+					<span>音樂清單</span>
 				</RouteLink>
 			</li>
 		</ul>

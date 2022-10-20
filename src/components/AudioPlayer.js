@@ -3,25 +3,28 @@ import { Button } from "primereact/button";
 import { Slider } from "primereact/slider";
 
 const AudioPlayer = ({
+	selectedAudio,
 	totalSecond,
-	audioTime,
-	play,
-	setPlay,
+	currentTime,
+	playing,
 	volume,
-	setVolume,
+	playerToggle,
 	silderTimeChange,
 	sliderTimeChangeEnd,
+	sliderVolumeChange,
+	replay,
+	setReplay,
 }) => {
 	const [audioTotalTime, setaudioTotalTime] = useState("0:00");
-	const [currentTime, setCurrentTime] = useState("0:00");
+	const [audioCurrentTime, setAudioCurrentTime] = useState("0:00");
 
 	useEffect(() => {
 		setaudioTotalTime(calculateTimeToString(totalSecond));
 	}, [totalSecond]);
 
 	useEffect(() => {
-		setCurrentTime(calculateTimeToString(audioTime));
-	}, [audioTime]);
+		setAudioCurrentTime(calculateTimeToString(currentTime));
+	}, [currentTime]);
 
 	const calculateTimeToString = (time) => {
 		const minutes = Math.floor(time / 60);
@@ -33,22 +36,32 @@ const AudioPlayer = ({
 	return (
 		<React.Fragment>
 			<Button
-				icon={`pi ${play ? "pi-pause" : "pi-play"}`}
+				icon={`pi ${playing ? "pi-pause" : "pi-play"}`}
 				className="p-button-rounded p-button-secondary"
 				aria-label="Player"
-				onClick={() => setPlay(!play)}
+				onClick={() => playerToggle(selectedAudio)}
+				title={`${playing ? "暫停" : "播放"}`}
 			/>
 			<div className="flex align-items-center justify-content-center audio-central">
 				<Slider
-					value={audioTime}
+					value={currentTime}
 					min={0}
 					max={totalSecond}
 					onChange={silderTimeChange}
 					onSlideEnd={sliderTimeChangeEnd}
 				/>
 				<label className="ml-2">
-					{currentTime}/{audioTotalTime}
+					{audioCurrentTime}/{audioTotalTime}
 				</label>
+
+				<Button
+					icon="pi pi-replay"
+					className={`p-button-rounded p-button-text ${
+						replay ? "p-button-success" : "p-button-secondary"
+					}`}
+					onClick={() => setReplay(!replay)}
+					title="循環播放"
+				/>
 			</div>
 			<div className="flex align-items-center justify-content-center audio-volumn">
 				<i className="pi pi-volume-down"></i>
@@ -58,7 +71,7 @@ const AudioPlayer = ({
 					min={0}
 					max={2}
 					step={0.01}
-					onChange={(e) => setVolume(e.value)}
+					onChange={sliderVolumeChange}
 				/>
 			</div>
 		</React.Fragment>

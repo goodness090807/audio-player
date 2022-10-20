@@ -1,0 +1,19 @@
+.audio-list-item{
+    .audio-img{
+        max-width: 100%;
+    }
+
+    .audio-text{
+        flex: 1;
+        width: 0;
+
+        div{
+            width: 96%;
+        }
+    }
+    
+    .audio-button{
+        width: 50px;
+    }
+}
+

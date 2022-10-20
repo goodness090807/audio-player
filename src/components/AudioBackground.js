@@ -1,9 +1,9 @@
 import React from "react";
 
-const AudioBackground = () => {
+const AudioBackground = ({ imageUrl }) => {
 	return (
 		<div className="audio-background">
-			<img title="imageName" alt="imageName" src="TODO:要抓網路的位置" />
+			<img title="imageName" alt="imageName" src={imageUrl} />
 		</div>
 	);
 };

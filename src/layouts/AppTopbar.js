@@ -1,12 +1,12 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Button } from "primereact/button";
-import { Menu } from "primereact/menu";
+// import { Menu } from "primereact/menu";
 import RouteLink from "../components/Routers/RouterLink";
 
 const AppTopbar = ({ mobileSidebarActive, setMobileSidebarActive }) => {
-	const menu = useRef(null);
+	// const menu = useRef(null);
 
-	const items = [{ label: "登入", icon: "pi pi-sign-in" }];
+	// const items = [{ label: "登入", icon: "pi pi-sign-in" }];
 
 	return (
 		<div className="fixed w-full flex align-items-center justify-content-between flex-wrap px-5 text-xl h-5rem layout-topbar">
@@ -27,16 +27,17 @@ const AppTopbar = ({ mobileSidebarActive, setMobileSidebarActive }) => {
 				<span>Audio Player</span>
 			</RouteLink>
 
-			<Button
+			{/*使用者登入先移除*/}
+			{/* <Button
 				icon="pi pi-user"
 				className="p-button-rounded p-button-outlined"
 				aria-label="User"
 				onClick={(event) => menu.current.toggle(event)}
 				aria-controls="popup_menu"
 				aria-haspopup
-			/>
+			/> */}
 
-			<Menu model={items} popup ref={menu} id="popup_menu" />
+			{/* <Menu model={items} popup ref={menu} id="popup_menu" /> */}
 		</div>
 	);
 };
