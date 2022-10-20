@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-	baseURL: "https://localhost:5001/api",
+	baseURL: "https://audio-player-api.herokuapp.com/api",
 });
